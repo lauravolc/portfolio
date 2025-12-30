@@ -486,3 +486,27 @@ nav .bar {
     }
 }
 
+/* Desktop default (môžeš upraviť podľa seba) */
+.hero-title{
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.05;
+    margin: 0 0 12px 0;
+}
+.hero-subtitle{
+    font-size: clamp(1.05rem, 2vw, 1.6rem);
+    color: var(--muted);
+    margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 560px){
+    .hero-title{
+        font-size: 2.1rem;   /* menšie */
+        line-height: 1.1;
+        text-align: left;    /* alebo center, ak chceš */
+    }
+    .hero-subtitle{
+        font-size: 1.15rem;
+        line-height: 1.25;
+    }
+}
