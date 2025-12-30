@@ -439,3 +439,74 @@ nav .bar {
     color:var(--accent2);
     text-decoration:none;
 }
+/* =========================
+   SKILLS – RESPONSIVE FIX
+   ========================= */
+
+/* Tablet */
+@media (max-width: 900px){
+    .skills-grid{
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .circle{
+        width: 140px;
+        height: 140px;
+    }
+
+    .circle svg{
+        width: 140px;
+        height: 140px;
+    }
+
+    .skill h3{
+        min-height: 44px;
+        font-size: 1.05rem;
+        line-height: 1.2;
+    }
+
+    .inner .lvl{
+        font-size: .85rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 560px){
+    /* nech je to 1 stĺpec a všetko pekne v strede */
+    .skills-grid{
+        grid-template-columns: 1fr;
+        gap: 18px;
+        justify-items: center;
+    }
+
+    /* zmenšíme kruhy, ale SVG nech sa škáluje automaticky */
+    .circle{
+        width: 120px;
+        height: 120px;
+    }
+
+    .circle svg{
+        width: 100%;
+        height: 100%;
+    }
+
+    /* nadpisy budú konzistentné a nezaberú zbytočne veľa miesta */
+    .skill h3{
+        min-height: 0;              /* na mobile netreba fixnú výšku */
+        margin-bottom: 10px;
+        font-size: 1rem;
+        line-height: 1.2;
+        padding: 0 10px;            /* aby sa dlhý text nelámal škaredo */
+        text-wrap: balance;         /* moderné prehliadače – krajšie zalomenie */
+    }
+
+    .inner .lvl{
+        font-size: .82rem;
+    }
+
+    /* menšie vnútorné odsadenie celej sekcie (ak máš globálne paddingy veľké) */
+    #skills.section{
+        border-radius: 16px;
+    }
+}
