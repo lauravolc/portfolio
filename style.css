@@ -439,74 +439,50 @@ nav .bar {
     color:var(--accent2);
     text-decoration:none;
 }
+
 /* =========================
-   SKILLS – RESPONSIVE FIX
+   SKILLS – MOBILE: 1 stĺpec, všetko na stred
    ========================= */
+@media (max-width: 700px){
 
-/* Tablet */
-@media (max-width: 900px){
+    /* 1) GRID musí byť natvrdo 1 stĺpec */
     .skills-grid{
-        gap: 24px;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: 1fr !important;
+        justify-items: center !important;
+        align-items: start;
+        gap: 22px;
     }
 
-    .circle{
-        width: 140px;
-        height: 140px;
+    /* 2) Každá skill "karta" nech je stredová */
+    .skill{
+        width: 100%;
+        max-width: 360px;      /* aby to nebolo príliš široké na väčších mobiloch */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .circle svg{
-        width: 140px;
-        height: 140px;
-    }
-
+    /* 3) Nadpisy – stred a rozumné zalomenie */
     .skill h3{
-        min-height: 44px;
-        font-size: 1.05rem;
+        width: 100%;
+        margin: 0 0 12px 0;
+        min-height: 0 !important;
         line-height: 1.2;
+        padding: 0 12px;
+        text-align: center;
     }
 
-    .inner .lvl{
-        font-size: .85rem;
-    }
-}
-
-/* Mobile */
-@media (max-width: 560px){
-    /* nech je to 1 stĺpec a všetko pekne v strede */
-    .skills-grid{
-        grid-template-columns: 1fr;
-        gap: 18px;
-        justify-items: center;
-    }
-
-    /* zmenšíme kruhy, ale SVG nech sa škáluje automaticky */
+    /* 4) Kruh v strede */
     .circle{
-        width: 120px;
-        height: 120px;
+        margin: 0 auto;
+        width: 130px;
+        height: 130px;
     }
 
     .circle svg{
         width: 100%;
         height: 100%;
     }
-
-    /* nadpisy budú konzistentné a nezaberú zbytočne veľa miesta */
-    .skill h3{
-        min-height: 0;              /* na mobile netreba fixnú výšku */
-        margin-bottom: 10px;
-        font-size: 1rem;
-        line-height: 1.2;
-        padding: 0 10px;            /* aby sa dlhý text nelámal škaredo */
-        text-wrap: balance;         /* moderné prehliadače – krajšie zalomenie */
-    }
-
-    .inner .lvl{
-        font-size: .82rem;
-    }
-
-    /* menšie vnútorné odsadenie celej sekcie (ak máš globálne paddingy veľké) */
-    #skills.section{
-        border-radius: 16px;
-    }
 }
+
